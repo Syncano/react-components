@@ -1,0 +1,18 @@
+{
+  "presets": [
+    ["env", {
+      "modules": false,
+      "loose": false
+    }],
+    "react"
+  ],
+  "plugins": [
+    ["import", {
+      "libraryName": "antd",
+      "style": true
+    }],
+    "transform-runtime",
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ]
+}
