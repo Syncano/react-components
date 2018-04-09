@@ -1,15 +1,16 @@
 {
-  "name": "@eyedea/login-form-component",
+  "name": "@syncano-components/login-form",
+  "repository": "https://github.com/syncano/react-components/components/login-form",
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
-    "@syncano/client": "^0.11.1",
-    "@syncano/react-context": "canary",
+    "@syncano/client": "0.12.1",
+    "@syncano/react-context": "0.12.1",
     "@syncano/socket-user-auth": "0.1.4",
-    "antd": "^3.4.0"
+    "antd": "3.4.1"
   },
   "peerDependencies": {
-    "@syncano/cli": "^0.11.1",
-    "react": "^16.3.1"
+    "@syncano/cli": "0.12.1",
+    "react": "16.3.1"
   }
 }
