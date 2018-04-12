@@ -1,9 +1,12 @@
 const tsImportPluginFactory = require('ts-import-plugin')
 
 module.exports = {
-  components: 'components/**/*.tsx',
+  components: 'components/**/index.tsx',
   propsParser: require('react-docgen-typescript').parse,
   webpackConfig: {
+    resolve: {
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json']
+    },
     module: {
       rules: [
         {
