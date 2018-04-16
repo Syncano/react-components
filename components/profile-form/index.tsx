@@ -1,7 +1,7 @@
 import {SyncanoContext} from '@syncano/react-context'
 import {Button, Form, Input, message} from 'antd'
 import * as React from 'react'
-// import {Avatar} from './avatar'
+import {Avatar} from './avatar'
 const FormItem = Form.Item
 
 interface Props {
@@ -9,7 +9,15 @@ interface Props {
   onError?: Function
 }
 
-export class ProfileForm extends React.Component<Props> {
+interface State {
+  isLoading?: boolean
+  error?: string
+  givenName?: string
+  familyName?: string
+  avatar?: string
+}
+
+export class ProfileForm extends React.Component<Props, State> {
   syncano: any
   state = {
     isLoading: false,
@@ -74,9 +82,9 @@ export class ProfileForm extends React.Component<Props> {
             onChange={this.handleChange}
           />
         </FormItem>
-        {/* <FormItem>
-          <Avatar />
-        </FormItem> */}
+        <FormItem>
+          <Avatar instanceName={this.syncano.instanceName} />
+        </FormItem>
         <FormItem>
           <Button
             loading={this.state.isLoading}

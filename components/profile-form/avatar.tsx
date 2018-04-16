@@ -1,7 +1,11 @@
 import {Icon, message, Upload} from 'antd'
 import * as React from 'react'
 
-export class Avatar extends React.Component {
+interface Props extends React.ClassAttributes<{}> {
+  instanceName: string
+}
+
+export class Avatar extends React.Component<Props> {
   state = {
     imageUrl: '',
     loading: false,
@@ -35,7 +39,7 @@ export class Avatar extends React.Component {
         listType="picture-card"
         className="avatar-uploader"
         showUploadList={false}
-        action="//jsonplaceholder.typicode.com/posts/"
+        action={`https://${this.props.instanceName}.syncano.space/user-profile/update-image/`}
         beforeUpload={beforeUpload}
         onChange={this.handleChange}
       >

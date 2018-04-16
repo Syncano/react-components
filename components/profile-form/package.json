@@ -4,13 +4,13 @@
   "version": "0.1.0",
   "license": "MIT",
   "dependencies": {
-    "@syncano/client": "0.12.1",
-    "@syncano/react-context": "0.12.1",
-    "@syncano/socket-user-auth": "0.1.4",
-    "antd": "3.4.1"
+    "@syncano/client": "0.12.1"
   },
   "peerDependencies": {
-    "@syncano/cli": "0.12.1",
-    "react": "16.3.1"
+    "@syncano/cli": "^0.12.1",
+    "@syncano/react-context": "^0.12.1",
+    "@eyedea-sockets/user-profile": "^0.1.0",
+    "antd": "^3.4.1",
+    "react": "^16.3.1"
   }
 }
