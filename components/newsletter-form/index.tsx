@@ -4,7 +4,9 @@ import * as React from 'react'
 const FormItem = Form.Item
 
 interface Props {
+  /** Callback after successful login */
   onSuccess?: Function
+  /** Callback after login error */
   onError?: Function
   listId: string
   inputPlaceholder?: string

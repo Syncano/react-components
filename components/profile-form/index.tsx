@@ -5,7 +5,9 @@ import {Avatar} from './avatar'
 const FormItem = Form.Item
 
 interface Props {
+  /** Callback after successful login */
   onSuccess?: Function
+  /** Callback after login error */
   onError?: Function
 }
 
