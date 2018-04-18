@@ -1,4 +1,3 @@
-import {SyncanoContext} from '@syncano/react-context'
 import {Button, Form, Input, message} from 'antd'
 import * as React from 'react'
 const FormItem = Form.Item
@@ -7,6 +6,7 @@ interface Props {
   /** Callback after successful login */
   onSuccess?: Function
   /** Callback after login error */
+  syncano: any
   onError?: Function
   listId: string
   inputPlaceholder?: string
@@ -92,8 +92,8 @@ export class NewsletterForm extends React.Component<Props, State> {
       },
     })
   }
-  renderForm = (syncano: any) => {
-    this.syncano = syncano
+  render() {
+    this.syncano = this.props.syncano
 
     return (
       <Form
@@ -104,8 +104,5 @@ export class NewsletterForm extends React.Component<Props, State> {
         {!this.props.children && this.renderDefaultView()}
       </Form>
     )
-  }
-  render() {
-    return <SyncanoContext.Consumer>{this.renderForm}</SyncanoContext.Consumer>
   }
 }
