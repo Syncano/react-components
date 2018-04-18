@@ -5,6 +5,7 @@
   "license": "MIT",
   "main": "./dist/index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "npx tsc && npx babel ./.build/ -d ./dist --copy-files"
   },
   "dependencies": {
