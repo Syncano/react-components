@@ -1,7 +1,7 @@
 {
   "name": "@syncano-components/login-form",
   "repository": "https://github.com/syncano/react-components/components/login-form",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "license": "MIT",
   "main": "./dist/index.js",
   "scripts": {
@@ -12,14 +12,14 @@
     "@syncano/client": "0.12.1"
   },
   "peerDependencies": {
-    "@syncano/cli": "^0.12.1",
-    "@syncano/react-context": "^0.12.1",
-    "@syncano/socket-user-auth": "0.1.4",
-    "antd": "^3.4.1",
-    "react": "^16.3.1"
+    "@syncano/cli": "0.12.x",
+    "@syncano/react-context": "0.12.x",
+    "@syncano/socket-user-auth": "0.1.x",
+    "antd": "3.x.x",
+    "react": "16.3.x"
   },
   "devDependencies": {
-    "@types/node": "^9.6.2",
+    "@types/node": "^9.6.5",
     "@types/react": "^16.3.5",
     "@types/react-dom": "^16.0.4",
     "@types/webpack": "^4.1.3",
