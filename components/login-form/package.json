@@ -1,7 +1,7 @@
 {
   "name": "@syncano-components/login-form",
   "repository": "https://github.com/syncano/react-components/components/login-form",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "MIT",
   "main": "./dist/index.js",
   "scripts": {
