@@ -7,6 +7,12 @@
     "./components/*"
   ],
   "dependencies": {
+    "@eyedea-sockets/mailchimp": "^0.1.0",
+    "@eyedea-sockets/user-profile": "^0.1.0",
+    "@syncano/client": "^0.13.0-alpha.915742d5",
+    "@syncano/react-context": "^0.13.0-alpha.915742d5",
+    "@syncano/socket-user-auth": "^0.1.9",
+    "antd": "^3.5.0",
     "react": "^16.3.1",
     "react-dom": "^16.3.1"
   },

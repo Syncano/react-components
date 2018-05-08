@@ -36,7 +36,7 @@ export class NewsletterForm extends React.Component<Props, State> {
     this.setState({error: '', isLoading: true})
 
     try {
-      const {token} = await this.syncano('mailchimp/signup', {
+      const {token} = await this.syncano.post('mailchimp/signup', {
         listId: this.props.listId,
         email: this.state.email,
       })
@@ -59,7 +59,7 @@ export class NewsletterForm extends React.Component<Props, State> {
   }
   renderDefaultView = () => {
     return (
-      <React.Fragment>
+      <div>
         <FormItem>
           <Input
             size="large"
@@ -79,7 +79,7 @@ export class NewsletterForm extends React.Component<Props, State> {
             {this.props.buttonLabel || 'Sign up'}
           </Button>
         </FormItem>
-      </React.Fragment>
+      </div>
     )
   }
   renderCustomView = (Children: any) => {

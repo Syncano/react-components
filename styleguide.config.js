@@ -18,12 +18,10 @@ module.exports = {
                 getCustomTransformers: () => ({
                   before: [tsImportPluginFactory({
                     libraryName: 'antd',
-                    libraryDirectory: 'lib',
+                    libraryDirectory: 'es',
                     style: true
                   })]
                 }),
-              },
-              options: {
                 useBabel: true
               }
             }
@@ -41,7 +39,7 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                sourceMap: 1
+                sourceMap: true
               }
             },
             {
