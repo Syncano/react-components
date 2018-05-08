@@ -32,7 +32,7 @@ export class LoginForm extends React.Component<Props> {
 
     try {
       this.setState({error: '', isLoading: true})
-      const {token} = await this.syncano('user-auth/login', this.state)
+      const {token} = await this.syncano.post('user-auth/login', this.state)
       message.success('Logged in')
 
       if (typeof this.props.onSuccess === 'function') {

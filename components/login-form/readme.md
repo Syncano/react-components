@@ -1,9 +1,11 @@
 LoginForm example:
 
 ```jsx
-const {SyncanoContext} = require('@syncano/react-context');
+const {SyncanoContext, withSyncano} = require('@syncano/react-context');
+const SyncanoClient = require('@syncano/client');
+const ConnectedLoginForm = withSyncano(LoginForm);
 
-<SyncanoContext.Provider value={require('@syncano/client')('webmaster-kit')}>
-  <LoginForm />
+<SyncanoContext.Provider value={new SyncanoClient('webmaster-kit')}>
+  <ConnectedLoginForm />
 </SyncanoContext.Provider>
 ```

@@ -42,7 +42,7 @@ export class ProfileForm extends React.Component<Props, State> {
     this.setState({error: '', isLoading: true})
 
     try {
-      const {token} = await this.syncano('user-profile/update', {
+      const {token} = await this.syncano.post('user-profile/update', {
         givenName: this.state.givenName,
         familyName: this.state.familyName,
       })
@@ -53,7 +53,7 @@ export class ProfileForm extends React.Component<Props, State> {
         this.props.onSuccess(token)
       }
     } catch (err) {
-      message.error(err.response.data.message || err.message)
+      message.error(err.response && err.response.data.message || err.message)
       this.setState({error: err.message})
 
       if (typeof this.props.onError === 'function') {
