@@ -1,4 +1,4 @@
-LoginForm example:
+Login Form example:
 
 ```jsx
 const {SyncanoContext} = require('@syncano/react-context');

@@ -64,6 +64,7 @@ export class ProfileForm extends React.Component<Props, State> {
     this.setState({isLoading: false})
   }
   renderDefaultView = () => {
+    console.log('XXX', this.syncano.url('user-profile/update-image'))
     return (
       <React.Fragment>
         <FormItem>
@@ -85,7 +86,7 @@ export class ProfileForm extends React.Component<Props, State> {
           />
         </FormItem>
         <FormItem>
-          <Avatar instanceName={this.syncano.instanceName} />
+          <Avatar uploadURL={this.syncano.url('user-profile/update-image')} />
         </FormItem>
         <FormItem>
           <Button
@@ -114,6 +115,9 @@ export class ProfileForm extends React.Component<Props, State> {
         onChange: this.handleChange,
       },
     })
+  }
+  componentWillUpdate(state, props) {
+    console.log(state, props)
   }
   render() {
     this.syncano = this.props.syncano

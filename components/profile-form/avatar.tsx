@@ -2,7 +2,7 @@ import {Icon, message, Upload} from 'antd'
 import * as React from 'react'
 
 interface Props extends React.ClassAttributes<{}> {
-  instanceName: string
+  uploadURL: string
 }
 
 export class Avatar extends React.Component<Props> {
@@ -35,15 +35,16 @@ export class Avatar extends React.Component<Props> {
 
     return (
       <Upload
-        name="avatar"
+        name="image"
         listType="picture-card"
         className="avatar-uploader"
         showUploadList={false}
-        action={`https://${this.props.instanceName}.syncano.space/user-profile/update-image/`}
+        data={file => ({image: file, filename: file.name, filetype: file.type})}
+        action={this.props.uploadURL}
         beforeUpload={beforeUpload}
         onChange={this.handleChange}
       >
-        {imageUrl ? <img src={imageUrl} alt="" /> : uploadButton}
+        {imageUrl ? <img src={imageUrl} width="87" alt="" /> : uploadButton}
       </Upload>
     )
   }
