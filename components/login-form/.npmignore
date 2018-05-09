@@ -1,0 +1,5 @@
+.build
+.babelrc
+tsconfig.json
+index.tsx
+node_modules
