@@ -7,7 +7,7 @@
     "build": "npx tsc && npx babel ./.build/ -d ./dist --copy-files"
   },
   "dependencies": {
-    "@syncano/client": "^0.13.0-alpha.915742d5"
+    "@syncano/client": "^0.13.0-alpha.38bab7cc"
   },
   "peerDependencies": {
     "@eyedea-sockets/mailchimp": "^0.1.0",

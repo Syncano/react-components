@@ -1,3 +1,4 @@
+import SyncanoClient from '@syncano/client'
 import {Button, Form, Input, message} from 'antd'
 import * as React from 'react'
 import {Avatar} from './avatar'
@@ -8,7 +9,7 @@ interface Props {
   onSuccess?: Function
   /** Callback after login error */
   onError?: Function
-  syncano: any
+  syncano: SyncanoClient
 }
 
 interface State {
@@ -28,7 +29,6 @@ export class ProfileForm extends React.Component<Props, State> {
     familyName: '',
     avatar: '',
   }
-
   handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const input = e.currentTarget
 
@@ -42,7 +42,7 @@ export class ProfileForm extends React.Component<Props, State> {
     this.setState({error: '', isLoading: true})
 
     try {
-      const {token} = await this.syncano.post('user-profile/update', {
+      const {token} = await this.props.syncano.post('user-profile/update', {
         givenName: this.state.givenName,
         familyName: this.state.familyName,
       })
@@ -63,44 +63,41 @@ export class ProfileForm extends React.Component<Props, State> {
 
     this.setState({isLoading: false})
   }
-  renderDefaultView = () => {
-    console.log('XXX', this.syncano.url('user-profile/update-image'))
-    return (
-      <React.Fragment>
-        <FormItem>
-          <Input
-            size="large"
-            name="givenName"
-            placeholder="First name"
-            value={this.state.givenName}
-            onChange={this.handleChange}
-          />
-        </FormItem>
-        <FormItem>
-          <Input
-            size="large"
-            name="familyName"
-            placeholder="Last name"
-            value={this.state.familyName}
-            onChange={this.handleChange}
-          />
-        </FormItem>
-        <FormItem>
-          <Avatar uploadURL={this.syncano.url('user-profile/update-image')} />
-        </FormItem>
-        <FormItem>
-          <Button
-            loading={this.state.isLoading}
-            size="large"
-            htmlType="submit"
-            type="primary"
-          >
-            Update
-          </Button>
-        </FormItem>
-      </React.Fragment>
-    )
-  }
+  renderDefaultView = () => (
+    <React.Fragment>
+      <FormItem>
+        <Input
+          size="large"
+          name="givenName"
+          placeholder="First name"
+          value={this.state.givenName}
+          onChange={this.handleChange}
+        />
+      </FormItem>
+      <FormItem>
+        <Input
+          size="large"
+          name="familyName"
+          placeholder="Last name"
+          value={this.state.familyName}
+          onChange={this.handleChange}
+        />
+      </FormItem>
+      <FormItem>
+        <Avatar uploadURL={this.props.syncano.url('user-profile/update-image')} />
+      </FormItem>
+      <FormItem>
+        <Button
+          loading={this.state.isLoading}
+          size="large"
+          htmlType="submit"
+          type="primary"
+        >
+          Update
+        </Button>
+      </FormItem>
+    </React.Fragment>
+  )
   renderCustomView = (Children: any) => {
     return Children({
       error: this.state.error,
@@ -116,12 +113,7 @@ export class ProfileForm extends React.Component<Props, State> {
       },
     })
   }
-  componentWillUpdate(state, props) {
-    console.log(state, props)
-  }
   render() {
-    this.syncano = this.props.syncano
-
     return (
       <Form onSubmit={this.handleSubmit}>
         {this.props.children && this.renderCustomView(this.props.children)}

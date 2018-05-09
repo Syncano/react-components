@@ -9,7 +9,7 @@
   "dependencies": {
     "@eyedea-sockets/mailchimp": "^0.1.0",
     "@eyedea-sockets/user-profile": "^0.1.0",
-    "@syncano/client": "^0.13.0-alpha.915742d5",
+    "@syncano/client": "^0.13.0-alpha.eab41488",
     "@syncano/react-context": "^0.13.0-alpha.915742d5",
     "@syncano/socket-user-auth": "^0.1.9",
     "antd": "^3.5.0",

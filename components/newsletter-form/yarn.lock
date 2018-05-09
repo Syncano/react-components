@@ -17,9 +17,9 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@syncano/client@^0.13.0-alpha.915742d5":
-  version "0.13.0-alpha.915742d5"
-  resolved "https://registry.yarnpkg.com/@syncano/client/-/client-0.13.0-alpha.915742d5.tgz#1518053bbc34be15eed2def8610ed521f1055f7d"
+"@syncano/client@^0.13.0-alpha.38bab7cc":
+  version "0.13.0-alpha.38bab7cc"
+  resolved "https://registry.yarnpkg.com/@syncano/client/-/client-0.13.0-alpha.38bab7cc.tgz#1f3a519a93141297a2d85a54ea431cc6b8ef407f"
   dependencies:
     axios "0.18.0"
 

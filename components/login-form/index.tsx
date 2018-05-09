@@ -1,3 +1,4 @@
+import SyncanoClient from '@syncano/client'
 import {Button, Form, Icon, Input, message} from 'antd'
 import * as React from 'react'
 const FormItem = Form.Item
@@ -7,11 +8,11 @@ interface Props {
   onSuccess?: Function
   /** Callback after login error */
   onError?: Function
-  syncano: any
+  syncano: SyncanoClient
 }
 
 export class LoginForm extends React.Component<Props> {
-  syncano: any
+  syncano: SyncanoClient
   state = {
     isLoading: false,
     error: '',
@@ -87,8 +88,8 @@ export class LoginForm extends React.Component<Props> {
       </React.Fragment>
     )
   }
-  renderCustomView = (Children: any) => {
-    return Children({
+  renderCustomView = (Children: any) =>
+    Children({
       error: this.state.error,
       usernameProps: {
         name: 'username',
@@ -101,7 +102,6 @@ export class LoginForm extends React.Component<Props> {
         onChange: this.handleChange,
       },
     })
-  }
   render() {
     this.syncano = this.props.syncano
 

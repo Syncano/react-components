@@ -1,3 +1,4 @@
+import SyncanoClient from '@syncano/client'
 import {Button, Form, Input, message} from 'antd'
 import * as React from 'react'
 const FormItem = Form.Item
@@ -6,7 +7,7 @@ interface Props {
   /** Callback after successful login */
   onSuccess?: Function
   /** Callback after login error */
-  syncano: any
+  syncano: SyncanoClient
   onError?: Function
   listId: string
   inputPlaceholder?: string
@@ -20,7 +21,7 @@ interface State {
 }
 
 export class NewsletterForm extends React.Component<Props, State> {
-  syncano: any
+  syncano: SyncanoClient
   state = {
     isLoading: false,
     error: '',

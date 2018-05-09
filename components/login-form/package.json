@@ -9,7 +9,7 @@
     "build": "npx tsc && npx babel ./.build/ -d ./dist --copy-files"
   },
   "dependencies": {
-    "@syncano/client": "^0.13.0-alpha.915742d5"
+    "@syncano/client": "^0.13.0-alpha.38bab7cc"
   },
   "peerDependencies": {
     "@syncano/cli": "0.12.x",
@@ -39,7 +39,7 @@
     "style-loader": "^0.20.3",
     "styled-jsx": "^2.2.6",
     "ts-import-plugin": "^1.4.4",
-    "typescript": "^2.8.1",
+    "typescript": "^2.8.3",
     "webpack": "^3.11.0"
   }
 }

@@ -37,6 +37,12 @@
   dependencies:
     axios "0.18.0"
 
+"@syncano/client@^0.13.0-alpha.eab41488":
+  version "0.13.0-alpha.eab41488"
+  resolved "https://registry.yarnpkg.com/@syncano/client/-/client-0.13.0-alpha.eab41488.tgz#7d55c073171049903ade1295fa0f0b1a4cf8e859"
+  dependencies:
+    axios "0.18.0"
+
 "@syncano/core@^0.12.1":
   version "0.12.1"
   resolved "https://registry.yarnpkg.com/@syncano/core/-/core-0.12.1.tgz#9dabab1684b18f3370d37e33b556639d141dbdf2"
